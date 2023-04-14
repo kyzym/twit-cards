@@ -1,15 +1,9 @@
 import { useState } from "react";
 import { FollowButtonStyled } from "./FollowButton.styled";
 
-export const FollowButton = () => {
-  const [isFollowing, setIsFollowing] = useState(false);
-
-  const handleClick = () => {
-    setIsFollowing(!isFollowing);
-  };
-
+export const FollowButton = ({ isFollowing, onClick }) => {
   return (
-    <FollowButtonStyled isFollowing={isFollowing} onClick={handleClick}>
+    <FollowButtonStyled isFollowing={isFollowing} onClick={onClick}>
       {isFollowing ? "Following" : "Follow"}
     </FollowButtonStyled>
   );

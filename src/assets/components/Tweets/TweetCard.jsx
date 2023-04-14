@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from "react";
+import backgroundImage from "../../img/bg-picture.png";
+import avatar from "../../img/hansel.png";
+import logo from "../../img/logo.png";
 import { FollowButton } from "../buttons/FollowButton/FollowButton";
 import {
   BackgroundImg,
@@ -9,11 +13,19 @@ import {
   StyledUserCircle,
   StyledUserImageContainer,
 } from "./TweetCard.styled";
-import logo from "../../img/logo.png";
-import backgroundImage from "../../img/bg-picture.png";
-import avatar from "../../img/hansel.png";
+import { formatNumber } from "../../helpers/numberFormatter";
+import { useToggleFollow } from "../../hooks/useToggleFollow";
 
 export const TweetCard = () => {
+  const [isFollowing, setIsFollowing] = useState(false);
+  const [followers, setFollowers] = useState(100500);
+
+  const toggleFollow = useToggleFollow(
+    isFollowing,
+    setIsFollowing,
+    setFollowers
+  );
+
   return (
     <StyledCardContainer>
       <StyledLogo src={logo} alt="GOIT logo" />
@@ -25,13 +37,13 @@ export const TweetCard = () => {
       </StyledUserCircle>
       <StyledStatsList>
         <li>
-          <StyledStats>Tweets</StyledStats>
+          <StyledStats>700 tweets</StyledStats>
         </li>
         <li>
-          <StyledStats>Followers</StyledStats>
+          <StyledStats>{formatNumber(followers)} followers</StyledStats>
         </li>
       </StyledStatsList>
-      <FollowButton />
+      <FollowButton isFollowing={isFollowing} onClick={toggleFollow} />
     </StyledCardContainer>
   );
 };

@@ -20,7 +20,7 @@ export const StyledCardContainer = styled.div`
     width: 100%;
     height: 8px;
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 0;
     transform: translateY(-50%);
   }
@@ -61,7 +61,7 @@ export const StyledUserCircle = styled.div`
   width: 80px;
   height: 80px;
   left: 50%;
-  top: 50%;
+  top: 47%;
   transform: translate(-50%, -50%);
   background: ${(p) => p.theme.primaryColor};
   border-radius: 50%;
