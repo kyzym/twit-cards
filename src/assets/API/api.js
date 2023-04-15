@@ -1,7 +1,13 @@
 import axios from "axios";
 import { MOCK_URL } from "../global/constants";
 
-export const fetchUsers = async (currentPage, setUsers, setHasMore) => {
+export const fetchUsers = async (
+  currentPage,
+  setUsers,
+  setHasMore,
+  setLoading
+) => {
+  setLoading(true);
   try {
     const limit = 12;
     const response = await axios.get(
@@ -14,6 +20,8 @@ export const fetchUsers = async (currentPage, setUsers, setHasMore) => {
     }
   } catch (error) {
     console.error("Error fetching users:", error);
+  } finally {
+    setLoading(false);
   }
 };
 
