@@ -78,6 +78,7 @@ export const StyledUserImageContainer = styled.div`
   height: 62px;
   border-radius: 50%;
   background-color: ${(p) => p.theme.circleBgColor};
+  overflow: hidden;
 `;
 
 export const StyledAvatar = styled.img`

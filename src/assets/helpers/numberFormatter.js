@@ -1,3 +1,3 @@
 export const formatNumber = (num) => {
-  return num.toLocaleString("en-US", { useGrouping: true });
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };

@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { formatNumber } from "../../helpers/numberFormatter";
+import { useIsFollowing } from "../../hooks/useIsFollowing";
+import { useToggleFollow } from "../../hooks/useToggleFollow";
 import backgroundImage from "../../img/bg-picture.png";
 import avatar from "../../img/hansel.png";
 import logo from "../../img/logo.png";
@@ -13,14 +16,13 @@ import {
   StyledUserCircle,
   StyledUserImageContainer,
 } from "./TweetCard.styled";
-import { formatNumber } from "../../helpers/numberFormatter";
-import { useToggleFollow } from "../../hooks/useToggleFollow";
 
-export const TweetCard = () => {
-  const [isFollowing, setIsFollowing] = useState(false);
-  const [followers, setFollowers] = useState(100500);
+export const TweetCard = ({ user }) => {
+  const [isFollowing, setIsFollowing] = useIsFollowing(user.id);
+  const [followers, setFollowers] = useState(user.followers);
 
   const toggleFollow = useToggleFollow(
+    user.id,
     isFollowing,
     setIsFollowing,
     setFollowers
@@ -32,12 +34,12 @@ export const TweetCard = () => {
       <BackgroundImg src={backgroundImage} alt="background" />
       <StyledUserCircle>
         <StyledUserImageContainer>
-          <StyledAvatar src={avatar} alt="avatar" />
+          <StyledAvatar src={user.avatar || avatar} alt="avatar" />
         </StyledUserImageContainer>
       </StyledUserCircle>
       <StyledStatsList>
         <li>
-          <StyledStats>700 tweets</StyledStats>
+          <StyledStats>{user.tweets} tweets</StyledStats>
         </li>
         <li>
           <StyledStats>{formatNumber(followers)} followers</StyledStats>

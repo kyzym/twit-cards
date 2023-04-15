@@ -11,7 +11,6 @@ export const FollowButtonStyled = styled.button`
 
   color: ${(p) => p.theme.secondaryTextColor};
 
-  border: none;
   font-size: 18px;
   line-height: 1.22;
   font-weight: 600;
@@ -22,7 +21,6 @@ export const FollowButtonStyled = styled.button`
 
   @media (hover: hover) {
     &:hover {
-      border: none;
       background-color: ${({
         isFollowing,
         theme: { primaryColorHover, secondaryBtnColorHover },

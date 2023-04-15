@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { TweetCard } from "../../assets/components/Tweets/TweetCard";
+// import { TweetCard } from "../../assets/components/Tweets/TweetCard";
+import { UsersList } from "../../assets/components/UserList/UserList";
 
 export const Tweets = () => {
   const navigate = useNavigate();
@@ -11,8 +12,8 @@ export const Tweets = () => {
 
   return (
     <div>
-      <h1>Tweets page</h1>
-      <TweetCard />
+      <h3>Tweets page</h3>
+      <UsersList />
       <button onClick={handleBackClick}>Home</button>
     </div>
   );
