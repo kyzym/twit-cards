@@ -6,4 +6,9 @@ export const StyledUserList = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 26px;
+
+  @media screen and(max-width: 785px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;

@@ -1,10 +1,16 @@
 import React from "react";
-import { Header } from "./header";
-import { Footer } from "./footer";
+import { Header } from "./Heared/Header";
+import { Footer } from "./Footer/Footer";
 
 export const SharedLayout = ({ children }) => {
   return (
-    <div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+      }}
+    >
       <Header />
       <main>{children}</main>
       <Footer />

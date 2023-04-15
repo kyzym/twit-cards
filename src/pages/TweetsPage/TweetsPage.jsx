@@ -1,20 +1,13 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 import { UsersList } from "../../assets/components/UserList/UserList";
+import { StyledTweetPage } from "./TweetsPage.styled";
 
 export const Tweets = () => {
-  // const navigate = useNavigate();
-
-  // const handleBackClick = () => {
-  //   navigate("/");
-  // };
-
   return (
-    <div>
-      <h3>Tweets page</h3>
+    <StyledTweetPage>
+      <h1>You tweets</h1>
       <UsersList />
-      {/* <button onClick={handleBackClick}>Back</button> */}
-    </div>
+    </StyledTweetPage>
   );
 };
