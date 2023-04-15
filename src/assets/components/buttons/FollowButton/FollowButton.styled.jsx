@@ -30,7 +30,7 @@ export const FollowButtonStyled = styled.button`
   }
 
   &:disabled {
-    background-color: #766a92;
+    background-color: #9466ff;
     pointer-events: none;
   }
 `;

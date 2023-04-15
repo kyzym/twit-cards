@@ -24,7 +24,7 @@ export const UsersList = () => {
         <TweetCard key={user.id} user={user} />
       ))}
       <FollowButtonStyled disabled={!hasMore} onClick={loadMore}>
-        {hasMore ? "Load More" : "That's All"}
+        {hasMore ? "Load More" : "That's All😲"}
       </FollowButtonStyled>
     </StyledUserList>
   );
