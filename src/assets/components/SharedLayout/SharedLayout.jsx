@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "./Heared/Header";
+import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 
 export const SharedLayout = ({ children }) => {

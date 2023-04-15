@@ -22,4 +22,7 @@ export const theme = {
   lineBgColor: "#ebd8ff",
 
   circleBgColor: "#5736a3",
+
+  navBtnBgColor: "#4b2a99",
+  navBtnColor: "#ebd8ff",
 };

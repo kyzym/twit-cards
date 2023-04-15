@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const StyledNavigationButton = styled.button`
   height: 50px;
   padding: 0 36px;
-  background-color: rgb(75, 42, 153);
-  color: rgb(235, 216, 255);
+  background-color: ${(p) => p.theme.navBtnBgColor};
+  color: ${(p) => p.theme.navBtnColor};
   transition: all 0.3s;
   font-size: 18px;
   line-height: 1.22;
