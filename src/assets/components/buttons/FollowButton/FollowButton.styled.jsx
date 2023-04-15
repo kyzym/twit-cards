@@ -15,16 +15,22 @@ export const FollowButtonStyled = styled.button`
   line-height: 1.22;
   font-weight: 600;
   margin: 26px 0 36px 0;
-
   cursor: pointer;
   transition: background-color 0.3s;
 
   @media (hover: hover) {
-    &:hover {
+    &:hover,
+    &:focus {
+      outline: none;
       background-color: ${({
         isFollowing,
         theme: { primaryColorHover, secondaryBtnColorHover },
       }) => (isFollowing ? primaryColorHover : secondaryBtnColorHover)};
     }
+  }
+
+  &:disabled {
+    background-color: #766a92;
+    pointer-events: none;
   }
 `;

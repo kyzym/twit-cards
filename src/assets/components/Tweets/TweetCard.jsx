@@ -5,7 +5,7 @@ import { useToggleFollow } from "../../hooks/useToggleFollow";
 import backgroundImage from "../../img/bg-picture.png";
 import avatar from "../../img/hansel.png";
 import logo from "../../img/logo.png";
-import { FollowButton } from "../buttons/FollowButton/FollowButton";
+import { StyledButton } from "../buttons/FollowButton/StyledButton";
 import {
   BackgroundImg,
   StyledAvatar,
@@ -45,7 +45,7 @@ export const TweetCard = ({ user }) => {
           <StyledStats>{formatNumber(followers)} followers</StyledStats>
         </li>
       </StyledStatsList>
-      <FollowButton isFollowing={isFollowing} onClick={toggleFollow} />
+      <StyledButton isFollowing={isFollowing} onClick={toggleFollow} />
     </StyledCardContainer>
   );
 };

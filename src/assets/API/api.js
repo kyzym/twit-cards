@@ -1,12 +1,19 @@
 import axios from "axios";
 import { MOCK_URL } from "../global/constants";
 
-export const fetchUsers = async (setUsers) => {
+export const fetchUsers = async (currentPage, setUsers, setHasMore) => {
   try {
-    const response = await axios.get(MOCK_URL);
-    setUsers(response.data);
+    const limit = 12;
+    const response = await axios.get(
+      `${MOCK_URL}?page=${currentPage}&limit=${limit}`
+    );
+    setUsers((prevUsers) => [...prevUsers, ...response.data]);
+
+    if (response.data.length < limit) {
+      setHasMore(false);
+    }
   } catch (error) {
-    console.error("Error:", error.message);
+    console.error("Error fetching users:", error);
   }
 };
 
@@ -16,6 +23,6 @@ export const updateFollowers = async (userId, newFollowers) => {
       followers: newFollowers,
     });
   } catch (error) {
-    console.error("Error updating followers:", error);
+    console.error("Error updating followers:", error.message);
   }
 };

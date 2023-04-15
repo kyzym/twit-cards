@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-// import { TweetCard } from "../../assets/components/Tweets/TweetCard";
+
 import { UsersList } from "../../assets/components/UserList/UserList";
 
 export const Tweets = () => {
