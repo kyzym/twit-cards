@@ -5,9 +5,10 @@ export const fetchUsers = async (
   currentPage,
   setUsers,
   setHasMore,
-  setLoading
+  setLoading,
+  isAdditionalLoad
 ) => {
-  setLoading(true);
+  if (!isAdditionalLoad) setLoading(true);
   try {
     const limit = 12;
     const response = await axios.get(
@@ -21,7 +22,7 @@ export const fetchUsers = async (
   } catch (error) {
     console.error("Error fetching users:", error);
   } finally {
-    setLoading(false);
+    if (!isAdditionalLoad) setLoading(false);
   }
 };
 
