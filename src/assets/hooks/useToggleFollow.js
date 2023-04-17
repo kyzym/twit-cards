@@ -11,10 +11,8 @@ export const useToggleFollow = (
       const newIsFollowing = !prevIsFollowing;
 
       setFollowers((prevFollowers) => {
-        const formattedPrevFollowers = parseInt(
-          prevFollowers.toString().replace(/,/g, ""),
-          10
-        );
+        console.log(typeof prevFollowers);
+        const formattedPrevFollowers = parseInt(prevFollowers.toString(), 10);
 
         const newFollowers = newIsFollowing
           ? formattedPrevFollowers + 1

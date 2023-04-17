@@ -1,3 +1,5 @@
 export const formatNumber = (num) => {
-  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const cleanedNumber = parseInt(num, 10);
+
+  return cleanedNumber.toLocaleString("en-US");
 };
