@@ -1,7 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import backgroundImage from '../../img/bg-picture.png';
 
-export const StyledCardContainer = styled.div`
-  background: ${(p) => p.theme.cardBgGradient};
+export const StyledCardContainer = styled.li`
+  background: url(${backgroundImage}) no-repeat,
+    ${(p) => p.theme.cardBgGradient};
+  background-position: top 20px center, center center;
+
   width: 380px;
   height: 460px;
   border-radius: 20px;
@@ -14,7 +18,7 @@ export const StyledCardContainer = styled.div`
   box-shadow: ${(p) => p.theme.cardShadow};
 
   &::before {
-    content: "";
+    content: '';
     background: ${(p) => p.theme.lineBgColor};
     box-shadow: ${(p) => p.theme.lineShadow};
     width: 100%;

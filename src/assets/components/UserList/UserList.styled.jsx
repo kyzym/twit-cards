@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const StyledUserList = styled.div`
+export const StyledUserList = styled.ul`
   max-width: 1195px;
   display: flex;
   flex-wrap: wrap;

@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { formatNumber } from "../../helpers/numberFormatter";
-import { useIsFollowing } from "../../hooks/useIsFollowing";
-import { useToggleFollow } from "../../hooks/useToggleFollow";
-import backgroundImage from "../../img/bg-picture.png";
-import avatar from "../../img/hansel.png";
-import logo from "../../img/logo.png";
-import { StyledButton } from "../buttons/FollowButton/StyledButton";
+import React, { useState } from 'react';
+import { formatNumber } from '../../helpers/numberFormatter';
+import { useIsFollowing } from '../../hooks/useIsFollowing';
+import { useToggleFollow } from '../../hooks/useToggleFollow';
+import backgroundImage from '../../img/bg-picture.png';
+import avatar from '../../img/hansel.png';
+import logo from '../../img/logo.png';
+import { StyledButton } from '../buttons/FollowButton/StyledButton';
 import {
   BackgroundImg,
   StyledAvatar,
@@ -15,7 +15,7 @@ import {
   StyledStatsList,
   StyledUserCircle,
   StyledUserImageContainer,
-} from "./TweetCard.styled";
+} from './TweetCard.styled';
 
 export const TweetCard = ({ user }) => {
   const [isFollowing, setIsFollowing] = useIsFollowing(user.id);
@@ -31,10 +31,9 @@ export const TweetCard = ({ user }) => {
   return (
     <StyledCardContainer>
       <StyledLogo src={logo} alt="GOIT logo" />
-      <BackgroundImg src={backgroundImage} alt="background" />
       <StyledUserCircle>
         <StyledUserImageContainer>
-          <StyledAvatar src={user.avatar || avatar} alt="avatar" />
+          <StyledAvatar src={user.avatar || avatar} alt="avatar" width="62px" />
         </StyledUserImageContainer>
       </StyledUserCircle>
       <StyledStatsList>
